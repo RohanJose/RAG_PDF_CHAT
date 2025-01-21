@@ -21,7 +21,7 @@ groq_api_key = st.secrets["api_keys"]["GROQ_API_KEY"]
 hf_token = st.secrets["api_keys"]["HF_TOKEN"]
 
 
-llm = ChatGroq(groq_api_key=groq_api,model_name="mixtral-8x7b-32768")
+llm = ChatGroq(groq_api_key=groq_api_key,model_name="mixtral-8x7b-32768")
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 st.title("CHAT WITH PDF WITH MIXTRAL ")
