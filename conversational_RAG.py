@@ -17,9 +17,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
 
-os.environ['GROQ_API_KEY'] = os.getenv("GROQ_API_KEY")
+groq_api_key = st.secrets["api_keys"]["GROQ_API_KEY"]
+hf_token = st.secrets["api_keys"]["HF_TOKEN"]
 
-groq_api = os.getenv("GROQ_API_KEY")
 
 llm = ChatGroq(groq_api_key=groq_api,model_name="mixtral-8x7b-32768")
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
