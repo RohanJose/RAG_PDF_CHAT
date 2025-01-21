@@ -4,10 +4,14 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_community.vectorstores import FAISS 
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
+from langchain_huggingface import HuggingFaceEmbeddings
+
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_groq import ChatGroq
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_community.embeddings import OllamaEmbeddings
+
+
 import os
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
@@ -18,7 +22,7 @@ os.environ['GROQ_API_KEY'] = os.getenv("GROQ_API_KEY")
 groq_api = os.getenv("GROQ_API_KEY")
 
 llm = ChatGroq(groq_api_key=groq_api,model_name="mixtral-8x7b-32768")
-embeddings = OllamaEmbeddings(model="all-minilm")
+embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 st.title("CHAT WITH PDF WITH MIXTRAL ")
 st.write("Upload Pdfs and chat with pdf with mistral ")
