@@ -1,0 +1,13 @@
+langchain
+python-dotenv
+langchain-community
+pypdf
+bs4
+arxiv
+pymupdf
+langchain-text-splitters
+lxml
+sentence-transformers
+langchain_huggingface
+FAISS-cpu
+langchain-groq
