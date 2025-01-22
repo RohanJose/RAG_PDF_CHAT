@@ -25,7 +25,7 @@ llm = ChatGroq(groq_api_key=groq_api_key,model_name="mixtral-8x7b-32768")
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 st.title("CHAT WITH PDF WITH MIXTRAL ")
-st.write("Upload Pdfs and chat with pdf with mistral ")
+st.write("Upload Pdfs and chat with pdf ")
 session_id=st.text_input("Session ID",value="default_session")
 
 if 'store' not in st.session_state:
@@ -109,6 +109,6 @@ if uploaded_files:
                 "configurable": {"session_id":session_id}
             },  
         )
-        st.write(st.session_state.store)
+        # st.write(st.session_state.store)
         st.write("Assistant:", response['answer'])
-        st.write("Chat History:", session_history.messages)
+        # st.write("Chat History:", session_history.messages)
