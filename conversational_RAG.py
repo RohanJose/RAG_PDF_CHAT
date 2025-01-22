@@ -24,7 +24,7 @@ hf_token = st.secrets["api_keys"]["HF_TOKEN"]
 llm = ChatGroq(groq_api_key=groq_api_key,model_name="mixtral-8x7b-32768")
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-st.title("CHAT WITH PDF WITH MIXTRAL ")
+st.title("CHAT WITH PDF")
 st.write("Upload Pdfs and chat with pdf ")
 session_id=st.text_input("Session ID",value="default_session")
 
